@@ -58,7 +58,7 @@
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="jia" ng-click="amend()">
   <span class="glyphicon glyphicon-plus" id="j"></span>
 </button>
-<div ng-show="xianshi" id="t">
+<!-- <div ng-show="xianshi" id="t">
 <p class="zj">title:</p>
 <textarea class="form-control" rows="1" ng-model="title" id="title"></textarea>
 
@@ -75,7 +75,52 @@
     <span class="label label-default">晴朗</span>
   </div>
 <button type="button" class="btn btn-warning" ng-click="add()" id="bu">增加</button>
+</div> -->
+<div class="su">
+<div ng-show="xianshi" id="xian">
+<div class="zo">
+  <div class="input-group">
+  <p class="zj">title:</p>
+  <input type="text" class="form-control" ng-model="title">
+  </div>
+  <div class="input-group">
+  <p class="pp">content:</p>
+  <input type="text" class="form-control" ng-model="content">
+  </div>
+<div class='tag'>
+    
+    <span class="label label-default">难过</span>
+    <span class="label label-default">苦涩</span>
+    <span class="label label-default">艰苦</span>
+    <span class="label label-default">奋斗</span>
+    <span class="label label-default">私密</span>
+    
+    
+  </div>
+  <button type="button" class="btn btn-info btn-xs" ng-click="add()" id="bu">增加</button>
+
+  </div>
 </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

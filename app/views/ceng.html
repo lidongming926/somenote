@@ -1,0 +1,92 @@
+<!-- 日记导航 -->
+<nav class="navbar navbar-default" role="navigation" id="dao">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="">somenote</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="搜索" ng-model="name" id="s">
+        </div>
+        <!-- <button type="submit" class="btn btn-default" id="tui">退出</button> -->
+    
+      </form>
+      <ul class="nav navbar-nav navbar-right" id="ul">
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="">所有日记</a></li>
+            <li><a href="">标签</a></li>
+            <li><a href="">查找</a></li>
+            <li class="divider"></li>
+            <li ng-click="out()"><a href="">退出</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</nav>
+
+
+
+
+<!-- 个人日记 -->
+<div class="panel panel-default" id="som" ng-repeat='x in data | filter:name'>
+  <div class="panel-heading">
+  <div class="titl">{{x.title}}</div>
+  <b ng-repeat='y in x.tag' class="label label-success" id="b">{{y}}</b>
+  <div class="da"><span class="glyphicon glyphicon-trash" id="s" ng-click="xx(x)"></span><span class="glyphicon glyphicon-edit" id="b" ui-sref="si({id:x.id,title:x.title,content:x.content})"></span>
+  </div></div>
+
+  <div class="panel-body">
+    <p>{{x.content}}</p>
+  </div>
+</div>
+
+
+
+
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="jia" ng-click="amend()">
+  <span class="glyphicon glyphicon-plus" id="j"></span>
+</button>
+<div ng-show="xianshi" id="t">
+<p class="zj">title:</p>
+<textarea class="form-control" rows="1" ng-model="title" id="title"></textarea>
+
+<p class="pp">content:</p>
+<textarea class="form-control" rows="3" ng-model="content" id="cont"></textarea>
+<div class='tag'>
+    <span class="label label-default">高兴</span>
+    <span class="label label-default">难过</span>
+    <span class="label label-default">苦涩</span>
+    <span class="label label-default">艰苦</span>
+    <span class="label label-default">奋斗</span>
+    <span class="label label-default">私密</span>
+    <span class="label label-default">公开</span>
+    <span class="label label-default">晴朗</span>
+  </div>
+<button type="button" class="btn btn-warning" ng-click="add()" id="bu">增加</button>
+</div>
+
+
+
+<span class="glyphicon glyphicon-hand-left" id="left" ng-click="left()"></span>
+<span class="glyphicon glyphicon-hand-right" id="right" ng-click="right()" ng-show="y"></span>
+
+
+
+
+
+
+
+
+
